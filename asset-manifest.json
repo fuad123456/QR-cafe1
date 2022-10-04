@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/QR-cafe1/static/css/main.78eb1329.css",
+    "main.js": "/QR-cafe1/static/js/main.3c298e34.js",
+    "static/js/787.71df535f.chunk.js": "/QR-cafe1/static/js/787.71df535f.chunk.js",
+    "static/media/burger.jpg": "/QR-cafe1/static/media/burger.d572455c187b05b10b9e.jpg",
+    "static/media/shopping-cart-icon.svg": "/QR-cafe1/static/media/shopping-cart-icon.00e81fbebca118c6d7372c16266a1d4b.svg",
+    "index.html": "/QR-cafe1/index.html",
+    "static/media/icon-back.svg": "/QR-cafe1/static/media/icon-back.b9dc6b159fe925d32854e648d3e31e5c.svg",
+    "main.78eb1329.css.map": "/QR-cafe1/static/css/main.78eb1329.css.map",
+    "main.3c298e34.js.map": "/QR-cafe1/static/js/main.3c298e34.js.map",
+    "787.71df535f.chunk.js.map": "/QR-cafe1/static/js/787.71df535f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.78eb1329.css",
+    "static/js/main.3c298e34.js"
+  ]
+}
