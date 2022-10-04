@@ -8,13 +8,13 @@ import HomePage from "./pages/HomePage/HomePages";
 export const App = function () {
     return (
         <>
-            <Routes>
-                <Route path='/'>
-                    <Route path='/' element={<HomePage/>}/>
-                    <Route path='menu' element={<MenuPage/>}/>
-                    <Route path='orders' element={<Orders/>}/>
-                </Route>
-            </Routes>
+            {/*<Routes>*/}
+            {/*    <Route path='/'>*/}
+            {/*        <Route path='/' element={<HomePage/>}/>*/}
+            {/*        <Route path='menu' element={<MenuPage/>}/>*/}
+            {/*        <Route path='orders' element={<Orders/>}/>*/}
+            {/*    </Route>*/}
+            {/*</Routes>*/}
         </>
     )
 }

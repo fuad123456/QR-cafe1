@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import {MenuPage} from './pages/MenuPage';
+import {MenuPage} from './pages/MenuPage';
 
 import reportWebVitals from './reportWebVitals';
 // import {Orders} from "./pages/Orders";
@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <BrowserRouter>
-            <App/>
+            <MenuPage/>
         </BrowserRouter>
     </React.StrictMode>
 );

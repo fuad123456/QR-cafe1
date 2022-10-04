@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import {OrderItem} from "../Components/OrderItem";
 import {TotalAmount} from "../Components/TotalAmount";
 import iconPng from '../assets/images/icon-back.svg'
-import {MenuPage} from "./MenuPage";
 import {Link} from "react-router-dom";
 
 export const Orders = function () {
