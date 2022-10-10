@@ -1,63 +1,44 @@
-import React, {useState} from "react";
+import React from "react";
 import 'swiper/css';
-import '../assets/images/burger.jpg'
-import '../assets/images/shopping-cart-icon.svg'
 import {Card} from "../Components/Card";
 import {SwiperOwn} from '../Components/SwiperOwn'
-import {Data} from "../assets/data/Data";
 import {Name} from "../Components/Name";
 import {Link} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {filterFood, setCategories} from "../features/foodSlice";
+import {updateData} from "../features/orderSlice";
 
 
-export const MenuPage = () => {
-    let [foods, setFoods] = useState(Data['BURGERS'].menuData)
-    let [totalItemsFood,setTotalItemsFood]=useState(0)
-    let data = setCategoriesClass(Data)
-    let [categories, setCategories] = useState(data)
-    function setCategoriesClass(data) {
-        let ar = []
-        for (let key in data) {
-            ar.push([key, data[key].class])
-        }
-        return ar
-    }
-
-    const filterFood = (event) => {
+export const MenuPage = (props) => {
+    const data=useSelector((state)=>state.foods.foods)
+        let amount=useSelector(state =>state.foods.amountChoosedFoods)
+        console.log(amount)
+        const dispatch=useDispatch()
+    const filter= (event) => {
         let val = event.currentTarget.dataset.value
-        let newCat = [...categories]
-        for (let i = 0; i < newCat.length; i++) {
-            newCat[i][1] = ''
-            if (val === newCat[i][0]) {
-                newCat[i][1] = 'filter-active'
-            }
-        }
-        setCategories(newCat)
-        let newKinds = [...Data[val].menuData]
-        setFoods(newKinds)
+        dispatch(filterFood(val))
+        dispatch(setCategories(val))
     }
     return (
         <div className="container">
             <Name
-                totalItems={totalItemsFood}
+            amount={amount}
             />
             <SwiperOwn
-                categories={categories}
-                filter={filterFood}
+                filter={filter}
             />
             {
-                foods.map(k => <Card
+                data.map(k => <Card
                     key={k.id}
                     name={k.name}
                     url={k.url}
                     id={k.id}
                     price={k.price}
-                    totalItems={totalItemsFood}
-                    setTotalItems={setTotalItemsFood}
                 />)
             }
 
             <div className="container fixed-bottom h-auto">
-                <Link to='/orders' className="btn btn-lg mbgc  mb-4 w-100"> Заказы</Link>
+                <Link to='/orders' className="btn btn-lg mbgc  mb-4 w-100 wps" onClick={updateData}> Заказы</Link>
             </div>
         </div>
     )

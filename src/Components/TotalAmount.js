@@ -1,26 +1,21 @@
 import React from "react";
+import {useSelector} from "react-redux";
 
 export function TotalAmount(props) {
-    let v=0
-    function sum() {
-        let c =0
-        for (let key in props.totalAmount){
-            c+=props.totalAmount[key].price
-            if (props.totalAmount[key].price){
-                v++
-            }
-        }
-        return c
-    }
+    let data=useSelector(state=>state.orders.choosedFoodsData)
+    let total=data.reduce(function (acc,el) {
+        return acc+(el.amount*el.price)
+    },0)
+
     return(
         <div className="total-amount fixed-bottom">
             <div className="dfsb">
                 <div>Item total</div>
-                <div>${sum()}</div>
+                <div>{total}</div>
             </div>
             <div className="dfsb">
                 <div>Discount</div>
-                <div>-$10</div>
+                <div>-10%</div>
             </div>
             <div className="dfsb">
                 <div>Tax</div>
@@ -28,8 +23,7 @@ export function TotalAmount(props) {
             </div>
             <div className="dfsb total">
                 <div>Total</div>
-                <div>$<span>{sum()-(0.1*sum())+(v?2:0)}</span></div>
-                {/*<div>$<span>{props.totalAmount}</span></div>*/}
+                <div>$<span>{total-(total*0.1)+2}</span></div>
             </div>
         </div>
     )

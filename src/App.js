@@ -6,15 +6,18 @@ import React from "react";
 import HomePage from "./pages/HomePage/HomePages";
 
 export const App = function () {
+    // localStorage.clear()//
+
     return (
         <>
-            {/*<Routes>*/}
-            {/*    <Route path='/'>*/}
-            {/*        <Route path='/' element={<HomePage/>}/>*/}
-            {/*        <Route path='menu' element={<MenuPage/>}/>*/}
-            {/*        <Route path='orders' element={<Orders/>}/>*/}
-            {/*    </Route>*/}
-            {/*</Routes>*/}
+            <Routes>
+                <Route path='/'>
+                    <Route index path='/QR-cafe1' element={<HomePage/>}/>
+                    <Route path='menu' element={<MenuPage
+                    />}/>
+                    <Route path='orders' element={<Orders/>}/>
+                </Route>
+            </Routes>
         </>
     )
 }

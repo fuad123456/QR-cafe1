@@ -8,20 +8,21 @@ import s from "../pages/style.css";
 import React from "react";
 import 'swiper/css';
 import {Items} from "./Items";
+import {useSelector} from "react-redux";
 
 export const SwiperOwn = (props) => {
+    const initialCategories=Object.keys(useSelector((state)=>state.foods.fullFoods))
+
     return (
         <div className={s.dfsb}>
             <Swiper
                 // install Swiper modules
                 loop={true}
-                spaceBetween={25}
+                spaceBetween={20}
                 slidesPerView={4}
-                // onSlideChange={() => console.log('slide change')}
-                // onSwiper={(swiper) => console.log(swiper)}
 
             >
-                {props.categories.map((comp, i) => <SwiperSlide key={i}>
+                {initialCategories.map((comp, i) => <SwiperSlide key={i}>
                     <Items
                         key={i}
                         comp={comp}

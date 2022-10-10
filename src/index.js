@@ -7,12 +7,16 @@ import reportWebVitals from './reportWebVitals';
 // import {Orders} from "./pages/Orders";
 import {BrowserRouter} from "react-router-dom";
 import {App} from "./App";
+import {store} from "./store/store";
+import {Provider} from "react-redux";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <BrowserRouter>
-            <MenuPage/>
+            <Provider store={store}>
+                <App/>
+            </Provider>
         </BrowserRouter>
     </React.StrictMode>
 );

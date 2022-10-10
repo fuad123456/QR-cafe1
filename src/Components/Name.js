@@ -1,7 +1,10 @@
 import React from "react";
+import {useSelector} from "react-redux";
 
 export function Name(props) {
-
+    let amount=useSelector(state =>state.foods.amountChoosedFoods)
+    // let amount=Object.keys(localStorage).length
+    // console.log(amount)
     return(
         <div className="section section-description">
             <div>
@@ -13,7 +16,7 @@ export function Name(props) {
             <div className="cart">
                 <div className="icon-place">
                     <img src={require('../assets/images/shopping-cart-icon.svg').default} alt="" className="icon-cart"/>
-                    <div className="cart-amount">{props.totalItems}</div>
+                    <div className="cart-amount">{amount}</div>
                 </div>
             </div>
         </div>

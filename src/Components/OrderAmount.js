@@ -1,32 +1,28 @@
-import React, {useState} from "react";
+import React from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {decreaseAmountOfChoosedFood, increaseAmountOfChoosedFood} from "../features/orderSlice";
 
 export function OrderAmount(props) {
-    let [count, setCount] = useState(1);
+    let data = useSelector(state => state.orders.choosedFoodsData)
+    const dispatch = useDispatch()
+    let a = data.filter(el => el.name === props.name)
 
-    function increase() {
-        setCount(count + 1)
-        console.log(props.name, count)
-        let arr = props.totalAmount
-        let newobj = arr.find(el => el.name === props.name)
-        newobj.price = (count + 1) * props.price
-        props.setTotalAmount([...arr])
+    function increase(event) {
+        let val = event.target.dataset.value
+        dispatch(increaseAmountOfChoosedFood(val))
     };
-
-    function decrease() {
-        if (count >= 1) {
-            setCount(count - 1);
-            let arr = props.totalAmount
-            let newobj = arr.find(el => el.name === props.name)
-            newobj.price = (count - 1) * props.price
-            props.setTotalAmount([...arr])
-        } else return;
+    function decrease(event) {
+        let val = event.target.dataset.value
+        dispatch(decreaseAmountOfChoosedFood(val))
     };
     return (
-        <div className="count">
-            <button className="btn-count" onClick={decrease}>-</button>
-            <div>{count}</div>
-            <button className="btn-count" onClick={increase}>+</button>
-            <div className="total">{count * (props.price)}</div>
+        <div className="amount ">
+            <div className="count">
+                <button className="btn-count" onClick={decrease} data-value={props.name}>-</button>
+                <div>{a[0] ? a[0].amount : 1}</div>
+                <button className="btn-count" onClick={increase} data-value={props.name}>+</button>
+            </div>
+            <div className="total">{a[0] ? a[0].amount * props.price : props.price} $</div>
         </div>
     )
 
