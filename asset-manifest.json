@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/QR-cafe1/static/css/main.af6017db.css",
-    "main.js": "/QR-cafe1/static/js/main.03c0b090.js",
+    "main.css": "/QR-cafe1/static/css/main.af76ab6f.css",
+    "main.js": "/QR-cafe1/static/js/main.06676c75.js",
     "static/js/787.71df535f.chunk.js": "/QR-cafe1/static/js/787.71df535f.chunk.js",
     "static/media/shopping-cart-icon.svg": "/QR-cafe1/static/media/shopping-cart-icon.00e81fbebca118c6d7372c16266a1d4b.svg",
     "index.html": "/QR-cafe1/index.html",
     "static/media/close-card.svg": "/QR-cafe1/static/media/close-card.1eb32e41a821565fa7a6aa8ef980c0dd.svg",
     "static/media/icon-back.svg": "/QR-cafe1/static/media/icon-back.b9dc6b159fe925d32854e648d3e31e5c.svg",
-    "main.af6017db.css.map": "/QR-cafe1/static/css/main.af6017db.css.map",
-    "main.03c0b090.js.map": "/QR-cafe1/static/js/main.03c0b090.js.map",
+    "main.af76ab6f.css.map": "/QR-cafe1/static/css/main.af76ab6f.css.map",
+    "main.06676c75.js.map": "/QR-cafe1/static/js/main.06676c75.js.map",
     "787.71df535f.chunk.js.map": "/QR-cafe1/static/js/787.71df535f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.af6017db.css",
-    "static/js/main.03c0b090.js"
+    "static/css/main.af76ab6f.css",
+    "static/js/main.06676c75.js"
   ]
 }
